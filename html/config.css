@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+    width: 0.25cm;
+    height: 0.25cm;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(140, 140, 140);
+    border-radius: 0.25cm;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(110, 110, 110);
+    border-radius: 10px;
+}
+body {
+    overflow: overlay;
+    margin: 0;
+}
