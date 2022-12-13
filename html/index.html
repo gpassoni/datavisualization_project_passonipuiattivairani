@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        :root {
+            --headerHeight: 60px;
+            --mapMarginTop: calc(var(--headerHeight) + 10px);
+            --dotDimension: 7.5px;
+        }
+        body {
+            margin: 0;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            height: var(--headerHeight);
+            background-color: white;
+            z-index: 99;
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        h1 {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            text-align: center;
+            width: 100%;    
+        }
+        .material-symbols-outlined.arrow {
+            font-size: 45px;
+            font-weight: 200;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .material-symbols-outlined.arrow:hover {
+            cursor: pointer;
+            color: rgb(100, 100, 100);
+        }
+        #dot-frame {
+            margin-top: 5px;
+            height: var(--dotDimension);
+            text-align: center;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+        .dot {
+            position: relative;
+            background-color: rgb(36, 36, 36);
+            width: var(--dotDimension);
+            height: var(--dotDimension);
+            border-radius: calc(var(--dotDimension) / 2);
+            float: left;
+        }
+        .dot:hover {
+            cursor: pointer;
+            background-color: rgb(75, 75, 75);
+        }
+        .dot.hover {
+            width: 35px;
+        }
+        iframe {
+            width: 100%;
+            margin-top: calc(var(--headerHeight) + 10px);
+            height: calc(100vh - var(--mapMarginTop));
+        }
+        a {
+            font-family: 'Quicksand', sans-serif;
+            color: black;
+            text-decoration: none;
+        }   
+        a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            text-decoration-thickness: 0.1px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="material-symbols-outlined arrow">
+            arrow_back
+        </span>
+
+        <div id="header-main-frame">
+            <h1>Human Development Reports</h1>
+            <div id="dot-frame">
+                <span class="dot hover"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <span class="material-symbols-outlined arrow">
+            arrow_forward
+        </span>
+    </header>
+
+    <main>
+        <article class="section-frame">
+            <section>
+                <iframe src="./chart/map_box_hdi.html" frameborder="0"></iframe>
+            </section>
+
+            <section>
+                <p id="test">asdfasdf</p>
+            </section>
+        </article>
+        
+        
+    </main>
+
+    <footer>
+        <a href="https://hdr.undp.org/data-center/documentation-and-downloads" target="_blank">
+            Dataset's Link
+        </a>
+    </footer>
+</body>
+<script src="./script.js"></script>
+</html>
