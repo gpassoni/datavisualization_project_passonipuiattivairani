@@ -71,6 +71,23 @@ function create_dot() {
     }
 }
 
+function search_key() {
+    var key = document.querySelector("#search-input").value;
+
+    if (key == "") {
+        alert("Insert an ISO value");
+    }else{
+        const data_link = "./json_files/to_country.json";
+
+        fetch(data_link)
+            .then(response => response.json())
+            .then((data) => {
+                alert(data[key.toUpperCase()])
+                document.querySelector("#search-input").value = "";
+            })
+    }
+}
+
 var frame = document.querySelectorAll(".section-frame");
 
 create_dot();

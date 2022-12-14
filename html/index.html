@@ -78,6 +78,44 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .section-text h2 {
+            text-align: center;
+        }
+        #search-section {
+            position: relative;
+            width: 300px;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #search-section input[type=search] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(220, 220, 220);
+            border-radius: 20px;
+            border: none;
+            z-index: 1;
+            padding-left: 15px;
+            font-size: 14px;
+        }
+        #search-section input[type=button] {
+            position: absolute;
+            z-index: 10;
+            border: none;
+            width: 75px;
+            height: 30px;
+            top: 2.5px;
+            right: 2.5px;
+            border-radius: 14px;
+            font-size: 15px;
+            background-color: rgb(20, 20, 20);
+            color: rgb(245, 245, 245);
+        }
+        #search-section input[type=button]:hover {
+            cursor: pointer;
+            background-color: rgb(50, 50, 50);
+        }
 
 
         footer {
@@ -87,9 +125,7 @@
             box-sizing: border-box;
         }
         footer a, footer p  {
-            font-family: 'Quicksand', sans-serif;
             color: white;
-            text-decoration: none;
         }   
         footer a:hover {
             cursor: pointer;
@@ -131,7 +167,17 @@
             </section>
 
             <section class="section-text">
-                <p id="test">asdfasdf</p>
+                <h2>HDI</h2>
+
+                <p id="test">Through a Choropleth map we create a render of the various HDI per country, the 
+                             color palette rappresent the classification of the nation. Unfortunately the map 
+                             use the iso format (acronym of the country) you can check the name of the state 
+                             inserting the iso in the search bar below.</p>
+            </section>
+
+            <section id="search-section">
+                <input type="search" id="search-input" placeholder="Insert ISO">
+                <input type="button" onclick="search_key()" value="Cerca">
             </section>
         </article>
         
@@ -161,4 +207,19 @@
     </footer>
 </body>
 <script src="./script.js"></script>
+<script>
+    alert(country)
+    function search_key() {
+    var key = document.querySelector("#search-input").value;
+
+    if (key == "") {
+        alert("Insert an ISO value");
+    }else{
+        alert(country[])
+    }
+}
+</script>
+<script>
+
+</script>
 </html>
