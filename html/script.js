@@ -88,8 +88,21 @@ function search_key() {
     }
 }
 
-function show_chart(name) {
-    document.querySelector("#").src = "./html/chart/" + name + ".html";
+function show_chart() {
+    var category = document.querySelector("#category").value;
+    var region = document.querySelector("#region").value;
+    var name = category + "_" + region;
+
+    var category_name = {"abr": "Adolescent Birth Rate",
+                    "eys": "Expected Years of Schooling",
+                    "gdi": "Gender Development Index",
+                    "le": "Life Expectancy at Birth",
+                    "co2": "Carbon Dioxide Emission Per Capita",
+                    "mf": "Material Footprint Per Capita"}
+
+    document.querySelector("#line-chart-frame").src = "./html/chart/line_charts/" + name + ".html";
+    document.querySelector("#line-chart-title").innerHTML = category_name[category] + "(" + category.toUpperCase() + ")";
+    document.querySelector("#line-chart-region").innerHTML = region.replaceAll("_", " ");
 }
 
 var frame = document.querySelectorAll(".section-frame");

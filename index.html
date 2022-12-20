@@ -72,7 +72,7 @@
             width: 35px;
         }
         iframe {
-            width: 100%;
+            width: calc(100% - 10px);
             height: calc(100vh - var(--mapMarginTop));
             overflow-x: hidden;
         }
@@ -81,7 +81,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .section-text h2 {
+        .section-text h2, .section-text h4 {
             text-align: center;
         }
         #search-section {
@@ -119,7 +119,7 @@
             cursor: pointer;
             background-color: rgb(50, 50, 50);
         }
-        #dropdown-menu {
+        .dropdown-menu {
             width: 300px;
             height: 40px;
             border-radius: 20px;
@@ -131,8 +131,30 @@
             transform: translateX(-50%);
             margin-top: 25px;
         }
-        #dropdown-menu:hover {
+        .dropdown-menu:hover {
             cursor: pointer;
+        }
+        #search-chart {
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            height: 30px;
+            margin-left: 50%;
+            font-size: 16px;
+            transform: translateX(-50%);
+            color: white;
+            background-color: rgb(26, 26, 107);
+        }
+        #search-chart:hover {
+            cursor: pointer;
+            background-color: rgb(51, 51, 129);
+        }
+        .main-title, .sub-title {
+            margin: 0;
+        }
+        .sub-title {
+            margin-bottom: 15px;
         }
 
 
@@ -185,7 +207,7 @@
             </section>
 
             <section class="section-text">
-                <h2>HDI</h2>
+                <h2>Health Development Index (HDI)</h2>
 
                 <p id="test">Through a Choropleth map we create a render of the various HDI per country, the 
                              color palette rappresent the classification of the nation. Unfortunately the map 
@@ -205,24 +227,46 @@
             </section>
 
             <section class="section-text">
+                <h2>Material Foot Print (MF)</h2>
+
                 <p id="test">aaasdfasdfasdfasdfsdfasdf</p>
             </section>
         </article>
 
         <article class="section-frame" style="display: none;">
             <section class="section-text">
-                <select name="" id="dropdown-menu">
-                    <option value="abr" onclick="show_chart('abr')">Adolescent Birth Rate</option>
-                    <option value="eys" onclick="show_chart('eys')">Expected Years of Schooling</option>
-                    <option value="gdi" onclick="show_chart('gdi')">Gender Development Index</option>
-                    <option value="le" onclick="show_chart('le')">Life Expectancy at Birth</option>
-                    <option value="co2" onclick="show_chart('co2')">Carbon Dioxide Emission Per Capita</option>
-                    <option value="mf" onclick="show_chart('mf')">Material Footprint Per Capita</option>
+                <select name="" class="dropdown-menu" id="category">
+                    <option value="" selected disabled hidden>Select Category</option>
+                    <option value="abr">Adolescent Birth Rate</option>
+                    <option value="eys">Expected Years of Schooling</option>
+                    <option value="gdi">Gender Development Index</option>
+                    <option value="le">Life Expectancy at Birth</option>
+                    <option value="co2">Carbon Dioxide Emission Per Capita</option>
+                    <option value="mf">Material Footprint Per Capita</option>
                 </select>
+
+                <select name="" class="dropdown-menu" id="region">
+                    <option value="" selected disabled hidden>Select Region</option>
+                    <option value="arab_states">Arab States</option>
+                    <option value="east_asia_and_the_pacific">East Asia and the Pacific</option>
+                    <option value="latin_america_and_the_caribbean">Latin America and the Caribbean</option>
+                    <option value="south_asia">South Asia</option>
+                    <option value="sub_saharan_africa">Sub-Saharan Africa</option>
+                    <option value="world">World</option>
+                </select>
+
+                <input id="search-chart" type="button" onclick="show_chart()" value="Send">
             </section>
 
             <section>
-                <iframe src="" frameborder="0"></iframe>
+                <iframe id="line-chart-frame" src="" frameborder="0"></iframe>
+            </section>
+
+            <section class="section-text">
+                <h2 id="line-chart-title" class="main-title"></h2>
+                <h4 id="line-chart-region" class="sub-title"></h4>
+
+                <p></p>
             </section>
         </article>
     </main>
