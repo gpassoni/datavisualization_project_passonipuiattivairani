@@ -30,6 +30,9 @@
             text-align: center;
             width: 100%;    
         }
+        .section-frame {
+            padding-top: calc(var(--headerHeight) + 10px);
+        }
         .arrow-btn {
             border: none;
             background-color: transparent;
@@ -70,7 +73,6 @@
         }
         iframe {
             width: 100%;
-            margin-top: calc(var(--headerHeight) + 10px);
             height: calc(100vh - var(--mapMarginTop));
         }
         .section-text {
@@ -116,6 +118,21 @@
             cursor: pointer;
             background-color: rgb(50, 50, 50);
         }
+        #dropdown-menu {
+            width: 300px;
+            height: 40px;
+            border-radius: 20px;
+            padding: 0 10px 0 10px;
+            font-size: 15px;
+            border: none;
+            background-color: rgb(230, 230, 230);
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 25px;
+        }
+        #dropdown-menu:hover {
+            cursor: pointer;
+        }
 
 
         footer {
@@ -135,7 +152,7 @@
         footer p {
             margin: 0;
             text-align: center;
-        }
+        }   
     </style>
 </head>
 
@@ -193,7 +210,18 @@
 
         <article class="section-frame" style="display: none;">
             <section class="section-text">
-                <p id="test">aaasdfasdfasdfasdfsdfasdf</p>
+                <select name="" id="dropdown-menu">
+                    <option value="abr" onclick="show_chart('abr')">Adolescent Birth Rate</option>
+                    <option value="eys" onclick="show_chart('eys')">Expected Years of Schooling</option>
+                    <option value="gdi" onclick="show_chart('gdi')">Gender Development Index</option>
+                    <option value="le" onclick="show_chart('le')">Life Expectancy at Birth</option>
+                    <option value="co2" onclick="show_chart('co2')">Carbon Dioxide Emission Per Capita</option>
+                    <option value="mf" onclick="show_chart('mf')">Material Footprint Per Capita</option>
+                </select>
+            </section>
+
+            <section>
+                <iframe src="" frameborder="0"></iframe>
             </section>
         </article>
     </main>

@@ -18,6 +18,6 @@ a, p, h1, h2, h3 {
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
 }
-input {
+input, select {
     outline: none;
 }

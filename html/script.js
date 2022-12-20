@@ -32,7 +32,7 @@ function go_back() {
 
     set_dot(pos);
     hider();
-    frame[pos].style.display = "inline";
+    frame[pos].style.display = "block";
     footer_position();
 }
 
@@ -45,7 +45,7 @@ function go_forward() {
 
     set_dot(pos)
     hider();
-    frame[pos].style.display = "inline";
+    frame[pos].style.display = "block";
     footer_position();
 }
 
@@ -86,6 +86,10 @@ function search_key() {
                 document.querySelector("#search-input").value = "";
             })
     }
+}
+
+function show_chart(name) {
+    document.querySelector("#").src = "./html/chart/" + name + ".html";
 }
 
 var frame = document.querySelectorAll(".section-frame");
