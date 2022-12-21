@@ -101,7 +101,7 @@ function show_chart() {
                     "mf": "Material Footprint Per Capita"}
 
     document.querySelector("#line-chart-frame").src = "./html/chart/line_charts/" + name + ".html";
-    document.querySelector("#line-chart-title").innerHTML = category_name[category] + "(" + category.toUpperCase() + ")";
+    document.querySelector("#line-chart-title").innerHTML = category_name[category] + " (" + category.toUpperCase() + ")";
     document.querySelector("#line-chart-region").innerHTML = region.replaceAll("_", " ");
 }
 

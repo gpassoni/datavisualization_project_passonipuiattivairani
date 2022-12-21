@@ -73,7 +73,7 @@
         }
         iframe {
             width: calc(100% - 10px);
-            height: calc(100vh - var(--mapMarginTop));
+            height: 100vh;
             overflow-x: hidden;
         }
         .section-text {
@@ -202,6 +202,15 @@
 
     <main>
         <article class="section-frame">
+            <section class="section-text">
+                <h2 style="font-size: 60px; text-align: center">Welcome</h2>
+                <p id="test">With this project we want to show how to the human wealth changed among the years.</p>
+                <p id="test">To do so we used different data and visualization.</p>
+                <input type="button" id="" value="Let's Start">
+            </section>
+        </article> 
+        
+        <article class="section-frame" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_hdi.html" frameborder="0"></iframe>
             </section>
@@ -218,7 +227,7 @@
 
             <section id="search-section">
                 <input type="search" id="search-input" placeholder="Insert ISO">
-                <input type="button" onclick="search_key()" value="Cerca">
+                <input type="button" onclick="search_key()" value="Search">
             </section>
         </article>
         
@@ -229,6 +238,9 @@
 
             <section class="section-text">
                 <h2>Material Foot Print (MF).</h2>
+
+                <p id="test">We create a map to visualize the footprint changes among the years from 1990 to 2021.</p>
+                <p id="test">This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
             </section>
         </article>
 
