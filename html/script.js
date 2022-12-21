@@ -77,7 +77,7 @@ function search_key() {
     if (key == "") {
         alert("Insert an ISO value");
     }else{
-        const data_link = "./json_files/to_country.json";
+        const data_link = "./html/json_files/to_country.json";
 
         fetch(data_link)
             .then(response => response.json())
