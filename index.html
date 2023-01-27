@@ -3,7 +3,10 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="./html/config.css">
+
+    <link rel="stylesheet" href="./html/css_files/config.css">
+    <link rel="stylesheet" href="./html/css_files/animation.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -32,6 +35,30 @@
         }
         .section-frame {
             padding-top: calc(var(--headerHeight) + 10px);
+        }
+        .section-frame-welcome {
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            min-height: 100vh;
+            width: 100%;
+            background-color: white;
+            margin-top: 0;
+        }
+        #start {
+            width: 225px;
+            height: 40px;
+            border: none;
+            border-radius: 7.5px;
+            background-color:rgb(26, 26, 107);
+            color: white;
+            font-size: 16px;
+            float: right;
+        }
+        #start:hover {
+            cursor: pointer;
+            background-color: rgb(51, 51, 129);
         }
         .arrow-btn {
             border: none;
@@ -201,16 +228,17 @@
     </header>
 
     <main>
-        <article class="section-frame">
-            <section class="section-text">
+        <article class="section-frame-welcome">
+            <section class="section-text animation-frame active">
                 <h2 style="font-size: 60px; text-align: center">Welcome</h2>
-                <p id="test">With this project we want to show how to the human wealth changed among the years.</p>
-                <p id="test">To do so we used different data and visualization.</p>
-                <input type="button" id="" value="Let's Start">
+                <p id="text-try">With this project we want to show how to the human wealth changed among the years.</p>
+                <p>To do so we used different data and visualization.</p>
+                <input type="button" id="start" onclick="start()" value="Let's Start">
             </section>
         </article> 
+
         
-        <article class="section-frame" style="display: none;">
+        <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_hdi.html" frameborder="0"></iframe>
             </section>
@@ -218,7 +246,7 @@
             <section class="section-text">
                 <h2>Health Development Index (HDI)</h2>
 
-                <p id="test">Through a Choropleth map we create a render of the various HDI per country, the 
+                <p>Through a Choropleth map we create a render of the various HDI per country, the 
                              color palette rappresent the classification of the nation. Unfortunately the map 
                              use the iso format (acronym of the country) you can check the name of the state 
                              inserting the iso in the search bar below. The use of this visualization is
@@ -231,7 +259,7 @@
             </section>
         </article>
         
-        <article class="section-frame" style="display: none;">
+        <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
             </section>
@@ -239,12 +267,12 @@
             <section class="section-text">
                 <h2>Material Foot Print (MF).</h2>
 
-                <p id="test">We create a map to visualize the footprint changes among the years from 1990 to 2021.</p>
-                <p id="test">This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
+                <p>We create a map to visualize the footprint changes among the years from 1990 to 2021.</p>
+                <p>This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
             </section>
         </article>
 
-        <article class="section-frame" style="display: none;">
+        <article class="section-frame animation-frame active" style="display: none;">
             <section class="section-text">
                 <p>In the following dorpdown menu we can select different variables for different parts of the world
                     (In some cases continents in in oder big portion of them, e.g. Arab States)</p>
@@ -292,5 +320,6 @@
         <p>Gabriele Passoni, Pietro Puiatti, Matteo Vairani</p>
     </footer>
 </body>
-<script src="./html/script.js"></script>
+<script src="./html/javascript_files/script.js"></script>
+<script src="./html/javascript_files//animation.js"></script>
 </html>

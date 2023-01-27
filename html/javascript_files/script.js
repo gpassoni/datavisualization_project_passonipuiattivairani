@@ -23,30 +23,52 @@ function hider() {
     }
 }
 
+function remove_animation() {
+    for (var i=0; i<frame.length; i++) {
+        frame[i].classList.remove("exit-forward");
+        frame[i].classList.remove("right");
+        frame[i].classList.remove("exit-back");
+    }
+}
+
 function go_back() {
     pos = get_position() - 1;
+    remove_animation()
+    frame[get_position()].classList.add("exit-back");
 
-    if (pos < 0) {
-        pos = frame.length - 1;
-    }
+    setTimeout(() => {
+        if (pos < 0) {
+            pos = frame.length - 1;
+        }
 
-    set_dot(pos);
-    hider();
-    frame[pos].style.display = "block";
-    footer_position();
+        set_dot(pos);
+        hider();
+        frame[pos].style.display = "block";
+        footer_position();
+    }, 250);
 }
 
 function go_forward() {
-    pos = get_position() + 1;
-
-    if (pos >= frame.length) {
-        pos = 0;
+    if (get_position() == frame.length - 1) {
+        pos = 0
+    }else{
+        pos = get_position() + 1;
     }
+    
+    remove_animation()
+    frame[get_position()].classList.add("exit-forward");
+    frame[pos].classList.add("right");
 
-    set_dot(pos)
-    hider();
-    frame[pos].style.display = "block";
-    footer_position();
+    setTimeout(() => {
+        if (pos >= frame.length) {
+            pos = 0;
+        }
+
+        set_dot(pos)
+        hider();
+        frame[pos].style.display = "block";
+        footer_position();
+    }, 250);
 }
 
 function set_dot(pos) {
@@ -103,6 +125,12 @@ function show_chart() {
     document.querySelector("#line-chart-frame").src = "./html/chart/line_charts/" + name + ".html";
     document.querySelector("#line-chart-title").innerHTML = category_name[category] + " (" + category.toUpperCase() + ")";
     document.querySelector("#line-chart-region").innerHTML = region.replaceAll("_", " ");
+}
+
+function start() {
+    document.querySelector(".section-frame-welcome").style.display = "none";
+    frame[0].style.display = "block";
+    footer_position();
 }
 
 var frame = document.querySelectorAll(".section-frame");
