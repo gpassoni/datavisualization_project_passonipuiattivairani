@@ -1,0 +1,21 @@
+Visualization 2 protocol
+
+Title: HDR21-22_Composite_indices_complete_time_series
+Timestamp: 1990-2021
+Data source: https://hdr.undp.org
+Dataset: https://hdr.undp.org/data-center/documentation-and-downloads
+
+Metadata: 
+
+Data Visualization process: The process was pretty straight forward. Imported the data using pandas, imputed the missing ones using kNN imputer.
+Shaped the data frmae to meet our requirements (Country as columns and Years as rows). Plotted using plotly.express.
+
+All actions performed:
+
+-Importing libraries
+-Imputing missing variables
+-Singled out the columns of interest
+-Singled out the years from the columns names
+-Reshaped dataframe with countries as columns and years as indexes
+-Changed data type of the interested feature into float because it was an integer
+-Plotted the visualization
