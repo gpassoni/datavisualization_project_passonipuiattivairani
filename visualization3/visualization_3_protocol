@@ -1,4 +1,4 @@
-Visualization 2 protocol
+Visualization 3 protocol
 
 Title: HDR21-22_Composite_indices_complete_time_series
 Timestamp: 1990-2021
@@ -10,14 +10,12 @@ You can find a complete and detailed file excel about metadata in this position:
 - statics/HDR21-22_Composite_indices_metadata.xlsx
 
 Data Visualization process: The process was pretty straight forward. Imported the data using pandas, imputed the missing ones using kNN imputer.
-Shaped the data frmae to meet our requirements (Country as columns and Years as rows). Plotted using plotly.express.
+Shaped the data frame to meet our requirements (Country as columns and Years as rows). Plotted using plotly.express.
 
 All actions performed:
 
 -Importing libraries
 -Imputing missing variables
--Singled out the columns of interest
--Singled out the years from the columns names
--Reshaped dataframe with countries as columns and years as indexes
--Changed data type of the interested feature into float because it was an integer
--Plotted the visualization
+-Splitting the main dataframe in subsets for each feature
+-Creating a function to extract the year from the complete feature's name
+-Creating a function that transpose the dataset and write an html file for each plot
