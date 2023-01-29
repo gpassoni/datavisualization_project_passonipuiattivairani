@@ -45,6 +45,7 @@ function go_back() {
         hider();
         frame[pos].style.display = "block";
         footer_position();
+        window.scrollTo(0, 0);
     }, 250);
 }
 
@@ -68,6 +69,7 @@ function go_forward() {
         hider();
         frame[pos].style.display = "block";
         footer_position();
+        window.scrollTo(0, 0);
     }, 250);
 }
 
@@ -126,10 +128,6 @@ function show_chart() {
 
     document.querySelector("#iframe-multiple-chart").style.display = "inline";
     footer_position()
-
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 300);
 }
 
 function start() {

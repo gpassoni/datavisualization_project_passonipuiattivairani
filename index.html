@@ -103,6 +103,15 @@
             height: calc(100vh - var(--headerHeight) - 20px);
             overflow-x: hidden;
         }
+        .frame-title {
+            font-size: 27.5px;
+            margin-bottom: 0px;
+        }
+        .protocol {
+            float: right;
+            margin-right: 25px;
+            margin-top: 5px;
+        }
         #mf-plot {
             height: 100vh;
         }
@@ -186,12 +195,6 @@
         .sub-title {
             margin-bottom: 15px;
         }
-        .frame-title {
-            font-size: 27.5px;
-            margin-bottom: 0px;
-        }
-
-
         footer {
             background-color: rgb(20, 20, 20);
             width: 100%;
@@ -201,12 +204,15 @@
         #frame-wrapper {
             display: flex;
         }
+        a {
+            color: black;
+        }
         footer a, footer p  {
             color: white;
             width: calc(100% / 3);
             text-align: center;
         }   
-        footer a:hover {
+        a:hover {
             cursor: pointer;
             text-decoration: underline;
             text-decoration-thickness: 0.1px;
@@ -263,10 +269,11 @@
         <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_hdi.html" frameborder="0"></iframe>
+                <a href="./html/protocol/hdi.txt" class="protocol" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
-                <h2>Human Development Index (HDI)</h2>
+                <h2 style="margin-top: 50px;">Human Development Index (HDI)</h2>
 
                 <p>Through a Choropleth map we create a render of the various HDI per country, the 
                         color palette rappresent the classification of the nation. Unfortunately the map 
@@ -288,10 +295,11 @@
         <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe id="mf-plot" src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
+                <a href="./html/protocol/footprint.txt" style="margin-top: -82.5px;" class="protocol" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
-                <h2 style="margin-top: -75px;">Material Foot Print (MF)</h2>
+                <h2 style="margin-top: -50px;">Material Foot Print (MF)</h2>
 
                 <p>We create a map to visualize the footprint changes among the years from 1990 to 2021. This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
                 <p>This plot's purpose is to let the user understand the change in the material footprint of each country in the last 30 years. The material Footprint is the amount of a country’s resources that are utilized by that same country, hence the amount of materials and resources a country uses for itself. By clicking the play button the plot will change colour, becoming darker if the amount of MF increases and lighter if it decreases. </p>
@@ -316,10 +324,11 @@
 
             <section id="iframe-multiple-chart" style="display: none;">
                 <iframe id="line-chart-frame" src="" frameborder="0"></iframe>
+                <a class="protocol" href="./html/protocol/multichart.txt" style="margin-top: -15px;" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
-                <h2 id="line-chart-title" class="main-title"></h2>
+                <h2 id="line-chart-title" class="main-title" style="margin-top: 15px;"></h2>
             </section>
         </article>
     </main>
@@ -330,11 +339,11 @@
                 Sources
             </a>
 
-            <a href="./docs/report.pdf" target="_blank">
+            <a href="./html/docs/report.pdf" target="_blank">
                 Report
             </a>
 
-            <a onclick="window.location.reload()"> 
+            <a onclick="window.location.reload(), window.scrollTo(0, 0);"> 
                 Home
             </a>
         </div>
