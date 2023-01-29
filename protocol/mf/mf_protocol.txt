@@ -6,6 +6,8 @@ Data source: https://hdr.undp.org
 Dataset: https://hdr.undp.org/data-center/documentation-and-downloads
 
 Metadata: 
+You can find a complete and detailed file excel about metadata in this position:
+- statics/HDR21-22_Composite_indices_metadata.xlsx
 
 Data Visualization process: The process was pretty straight forward. Imported the data using pandas, imputed the missing ones using kNN imputer.
 Shaped the data frmae to meet our requirements (Country as columns and Years as rows). Plotted using plotly.express.
@@ -19,3 +21,4 @@ All actions performed:
 -Reshaped dataframe with countries as columns and years as indexes
 -Changed data type of the interested feature into float because it was an integer
 -Plotted the visualization
+-Added the 3D animation to make the rounded map

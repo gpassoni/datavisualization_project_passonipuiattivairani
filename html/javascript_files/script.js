@@ -124,15 +124,7 @@ function show_chart() {
     var category = document.querySelector("#category").value;
     var name = category;
 
-    var category_name = {"abr": "Adolescent Birth Rate",
-                    "eys": "Expected Years of Schooling",
-                    "gdi": "Gender Development Index",
-                    "le": "Life Expectancy at Birth",
-                    "co2": "Carbon Dioxide Emission Per Capita",
-                    "mf": "Material Footprint Per Capita"}
-
     document.querySelector("#line-chart-frame").src = "./html/chart/line_charts/" + name + ".html";
-    document.querySelector("#line-chart-title").innerHTML = category_name[category] + " (" + category.toUpperCase() + ")";
 
     document.querySelector("#iframe-multiple-chart").style.display = "inline";
     footer_position()

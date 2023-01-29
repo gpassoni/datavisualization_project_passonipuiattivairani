@@ -170,6 +170,7 @@
             margin-left: 50%;
             transform: translateX(-50%);
             margin-top: 25px;
+            margin-bottom: 25px;
         }
         .dropdown-menu:hover {
             cursor: pointer;
@@ -270,7 +271,7 @@
         <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_hdi.html" frameborder="0"></iframe>
-                <a href="./html/protocol/hdi.zip" class="protocol" download="">Visualization Protocol</a>
+                <a href="./protocol/hdi.zip" class="protocol" download="">Visualization Protocol</a>
             </section>
 
             <section class="section-text">
@@ -289,27 +290,28 @@
             </section>
 
             <section class="section-text">
-                <p>This  plot aims at showing the difference in the Human Development Index across the globe (thus having globe shape). The darker the colour, the higher the Development Index. Since it is an interactive plot, the user (you) can easily navigate it by clicking on it and dragging in a specific direction to make in turn. It is also possible to zoom in. If the cursor hovers a country the ISO code and the HDI amount are displayed. Underneath there is an input text box in which u can put the ISO code u read to get the country's name (in case you don’t know what country it is).</p>
+                <p>This  plot aims at showing the difference in the Human Development Index across the globe (thus having globe shape). The darker the colour, the higher the Development Index. Since it is an interactive plot, the user (you) can easily navigate it by clicking on it and dragging in a specific direction to make in turn. It is also possible to zoom in. If the cursor hovers a country the ISO code and the HDI amount are displayed. Underneath there is an input text box in which u can put the ISO code u read to get the country's name (in case you don't know what country it is).</p>
             </section>
         </article>
         
         <article class="section-frame" style="display: none;">
             <section>
                 <iframe id="mf-plot" src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
-                <a href="./html/protocol/mf.zip" style="margin-top: -82.5px;" class="protocol" download>Visualization Protocol</a>
+                <a href="./protocol/mf.zip" class="protocol" style="position: relative; margin-top: -82.5px; z-index: 100;" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
                 <h2 style="margin-top: -50px;">Material Foot Print (MF)</h2>
 
                 <p>We create a map to visualize the footprint changes among the years from 1990 to 2021. This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
-                <p>This plot's purpose is to let the user understand the change in the material footprint of each country in the last 30 years. The material Footprint is the amount of a country’s resources that are utilized by that same country, hence the amount of materials and resources a country uses for itself. By clicking the play button the plot will change colour, becoming darker if the amount of MF increases and lighter if it decreases. </p>
+                <p>This plot's purpose is to let the user understand the change in the material footprint of each country in the last 30 years. The material Footprint is the amount of a country's resources that are utilized by that same country, hence the amount of materials and resources a country uses for itself. By clicking the play button the plot will change colour, becoming darker if the amount of MF increases and lighter if it decreases. </p>
             </section>
         </article>
 
         <article class="section-frame" style="display: none;">
             <section class="section-text">
                 <p>In the following dorpdown menu is possible to select different variables and return the data divided by the main region of the world.</p>
+                
                 <select onchange="show_chart()" class="dropdown-menu" id="category">
                     <option value="" selected disabled hidden>Select Category</option>
                     <option value="abr">Adolescent Birth Rate</option>
@@ -325,11 +327,7 @@
 
             <section id="iframe-multiple-chart" style="display: none;">
                 <iframe id="line-chart-frame" src="" frameborder="0"></iframe>
-                <a class="protocol" href="./html/protocol/multichart.zip" style="margin-top: -15px;" download>Visualization Protocol</a>
-            </section>
-
-            <section class="section-text">
-                <h2 id="line-chart-title" class="main-title" style="margin-top: 15px;"></h2>
+                <a href="./protocol/multichart.zip" class="protocol" style="position: relative; margin-top: -40px; z-index: 100;" download>Visualization Protocol</a>
             </section>
         </article>
     </main>
@@ -340,7 +338,7 @@
                 Sources
             </a>
 
-            <a href="./html/docs/report.pdf" target="_blank">
+            <a href="./report.pdf" target="_blank">
                 Report
             </a>
 
