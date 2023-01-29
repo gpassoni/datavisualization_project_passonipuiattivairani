@@ -279,6 +279,10 @@
                 <input type="search" id="search-input" placeholder="Insert ISO">
                 <input type="button" onclick="search_key()" value="Search">
             </section>
+
+            <section class="section-text">
+                <p></p>This  plot aims at showing the difference in the Human Development Index across the globe (thus having globe shape). The darker the colour, the higher the Development Index. Since it is an interactive plot, the user (you) can easily navigate it by clicking on it and dragging in a specific direction to make in turn. It is also possible to zoom in. If the cursor hovers a country the ISO code and the HDI amount are displayed. Underneath there is an input text box in which u can put the ISO code u read to get the country’s name (in case you don’t know what country it is).</p>
+            </section>
         </article>
         
         <article class="section-frame animation-frame active" style="display: none;">
@@ -291,6 +295,7 @@
 
                 <p>We create a map to visualize the footprint changes among the years from 1990 to 2021.</p>
                 <p>This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
+                <p>This plot’s purpose is to let the user understand the change in the material footprint of each country in the last 30 years. The material Footprint is the amount of a country’s resources that are utilized by that same country, hence the amount of materials and resources a country uses for itself. By clicking the play button the plot will change colour, becoming darker if the amount of MF increases and lighter if it decreases. </p>
             </section>
         </article>
 
@@ -307,6 +312,8 @@
                     <option value="mf">Material Footprint Per Capita</option>
                 </select>
 
+                <p>This section is containing more plots because we wanted to show the difference in the other features among different continents (or parts of the world). By selecting a feature (with the dropdown menu) a specific graph will show up representing the feature selected and its value and change over the years. Each colour represents a group of countries.</p>
+
                 <input id="search-chart" type="button" onclick="show_chart()" value="Send">
             </section>
 
@@ -316,8 +323,6 @@
 
             <section class="section-text">
                 <h2 id="line-chart-title" class="main-title"></h2>
-
-                <p></p>
             </section>
         </article>
     </main>
@@ -328,7 +333,7 @@
                 Sources
             </a>
 
-            <a href="./docs/report.pdf">
+            <a href="./docs/report.pdf" target="_blank">
                 Report
             </a>
 
