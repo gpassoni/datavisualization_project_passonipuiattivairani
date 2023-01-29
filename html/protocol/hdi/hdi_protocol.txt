@@ -1,4 +1,4 @@
-Visualization 2 protocol
+HDI visualization protocol
 
 Title: HDR21-22_Composite_indices_complete_time_series
 Timestamp: 1990-2021

@@ -28,12 +28,16 @@ function remove_animation() {
         frame[i].classList.remove("exit-forward");
         frame[i].classList.remove("right");
         frame[i].classList.remove("exit-back");
+        frame[i].classList.remove("animation-frame");
+        frame[i].classList.remove("active");
     }
 }
 
 function go_back() {
     pos = get_position() - 1;
     remove_animation()
+    frame[get_position()].classList.add("animation-frame");
+    frame[get_position()].classList.add("active");
     frame[get_position()].classList.add("exit-back");
 
     setTimeout(() => {
@@ -58,6 +62,10 @@ function go_forward() {
     
     remove_animation()
     frame[get_position()].classList.add("exit-forward");
+    frame[get_position()].classList.add("animation-frame");
+    frame[get_position()].classList.add("active");
+    frame[pos].classList.add("animation-frame");
+    frame[pos].classList.add("active");
     frame[pos].classList.add("right");
 
     setTimeout(() => {

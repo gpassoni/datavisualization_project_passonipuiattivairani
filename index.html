@@ -35,6 +35,7 @@
         }
         .section-frame {
             padding-top: calc(var(--headerHeight) + 10px);
+            margin-bottom: 40px;
         }
         .section-frame-welcome {
             position: absolute;
@@ -269,7 +270,7 @@
         <article class="section-frame animation-frame active" style="display: none;">
             <section>
                 <iframe src="./html/chart/map_box_hdi.html" frameborder="0"></iframe>
-                <a href="./html/protocol/hdi.txt" class="protocol" download>Visualization Protocol</a>
+                <a href="./html/protocol/hdi.zip" class="protocol" download="">Visualization Protocol</a>
             </section>
 
             <section class="section-text">
@@ -292,10 +293,10 @@
             </section>
         </article>
         
-        <article class="section-frame animation-frame active" style="display: none;">
+        <article class="section-frame" style="display: none;">
             <section>
                 <iframe id="mf-plot" src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
-                <a href="./html/protocol/footprint.txt" style="margin-top: -82.5px;" class="protocol" download>Visualization Protocol</a>
+                <a href="./html/protocol/mf.zip" style="margin-top: -82.5px;" class="protocol" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
@@ -306,7 +307,7 @@
             </section>
         </article>
 
-        <article class="section-frame animation-frame active" style="display: none;">
+        <article class="section-frame" style="display: none;">
             <section class="section-text">
                 <p>In the following dorpdown menu is possible to select different variables and return the data divided by the main region of the world.</p>
                 <select onchange="show_chart()" class="dropdown-menu" id="category">
@@ -324,7 +325,7 @@
 
             <section id="iframe-multiple-chart" style="display: none;">
                 <iframe id="line-chart-frame" src="" frameborder="0"></iframe>
-                <a class="protocol" href="./html/protocol/multichart.txt" style="margin-top: -15px;" download>Visualization Protocol</a>
+                <a class="protocol" href="./html/protocol/multichart.zip" style="margin-top: -15px;" download>Visualization Protocol</a>
             </section>
 
             <section class="section-text">
