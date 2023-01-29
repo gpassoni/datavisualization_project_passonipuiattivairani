@@ -142,7 +142,7 @@
             right: 2.5px;
             border-radius: 14px;
             font-size: 15px;
-            background-color: rgb(20, 20, 20);
+            background-color: rgb(51, 51, 129);
             color: rgb(245, 245, 245);
         }
         #search-section input[type=button]:hover {
@@ -269,10 +269,10 @@
                 <h2>Human Development Index (HDI)</h2>
 
                 <p>Through a Choropleth map we create a render of the various HDI per country, the 
-                             color palette rappresent the classification of the nation. Unfortunately the map 
-                             use the iso format (acronym of the country) you can check the name of the state 
-                             inserting the iso in the search bar below. The use of this visualization is
-                             to show how the different countries are ranked in order of Human Developmenrt Index</p>
+                        color palette rappresent the classification of the nation. Unfortunately the map 
+                        use the iso format (acronym of the country) you can check the name of the state 
+                        inserting the iso in the search bar below. The use of this visualization is
+                        to show how the different countries are ranked in order of Human Developmenrt Index</p>
             </section>
 
             <section id="search-section">
@@ -291,10 +291,9 @@
             </section>
 
             <section class="section-text">
-                <h2>Material Foot Print (MF)</h2>
+                <h2 style="margin-top: -75px;">Material Foot Print (MF)</h2>
 
-                <p>We create a map to visualize the footprint changes among the years from 1990 to 2021.</p>
-                <p>This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
+                <p>We create a map to visualize the footprint changes among the years from 1990 to 2021. This Choroplet is aiming to show the change of MF throughout the 31 years of data we have.</p>
                 <p>This plot's purpose is to let the user understand the change in the material footprint of each country in the last 30 years. The material Footprint is the amount of a country’s resources that are utilized by that same country, hence the amount of materials and resources a country uses for itself. By clicking the play button the plot will change colour, becoming darker if the amount of MF increases and lighter if it decreases. </p>
             </section>
         </article>
@@ -302,7 +301,7 @@
         <article class="section-frame animation-frame active" style="display: none;">
             <section class="section-text">
                 <p>In the following dorpdown menu is possible to select different variables and return the data divided by the main region of the world.</p>
-                <select name="" class="dropdown-menu" id="category">
+                <select onchange="show_chart()" class="dropdown-menu" id="category">
                     <option value="" selected disabled hidden>Select Category</option>
                     <option value="abr">Adolescent Birth Rate</option>
                     <option value="eys">Expected Years of Schooling</option>
@@ -312,12 +311,10 @@
                     <option value="mf">Material Footprint Per Capita</option>
                 </select>
 
-                <input id="search-chart" type="button" onclick="show_chart()" value="Send">
-
                 <p>This section is containing more plots because we wanted to show the difference in the other features among different continents (or parts of the world). By selecting a feature (with the dropdown menu) a specific graph will show up representing the feature selected and its value and change over the years. Each colour represents a group of countries, if you double click on a specific field name in the legend on right side it will show only that selected.</p>
             </section>
 
-            <section>
+            <section id="iframe-multiple-chart" style="display: none;">
                 <iframe id="line-chart-frame" src="" frameborder="0"></iframe>
             </section>
 

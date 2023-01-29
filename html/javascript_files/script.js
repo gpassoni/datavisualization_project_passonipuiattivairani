@@ -123,12 +123,20 @@ function show_chart() {
 
     document.querySelector("#line-chart-frame").src = "./html/chart/line_charts/" + name + ".html";
     document.querySelector("#line-chart-title").innerHTML = category_name[category] + " (" + category.toUpperCase() + ")";
+
+    document.querySelector("#iframe-multiple-chart").style.display = "inline";
+    footer_position()
+
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 300);
 }
 
 function start() {
     document.querySelector(".section-frame-welcome").style.display = "none";
     frame[0].style.display = "block";
     footer_position();
+    window.scrollTo(0, 0);
 }
 
 var frame = document.querySelectorAll(".section-frame");
