@@ -63,9 +63,3 @@
 .animation-frame.exit-back.active {
     animation: exit-back 0.25s ease-in;
 }
-
-
-.animation-frame.opacity.active {
-    opacity: 1;
-    animation: opacity 0.25s ease-in;
-}

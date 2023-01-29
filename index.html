@@ -27,7 +27,7 @@
             flex-direction: row;
             justify-content: space-between;
         }
-        h1 {
+        #header-title {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             text-align: center;
@@ -100,8 +100,11 @@
         }
         iframe {
             width: calc(100% - 10px);
-            height: 100vh;
+            height: calc(100vh - var(--headerHeight) - 20px);
             overflow-x: hidden;
+        }
+        #mf-plot {
+            height: 100vh;
         }
         .section-text {
             width: 90%;
@@ -183,6 +186,10 @@
         .sub-title {
             margin-bottom: 15px;
         }
+        .frame-title {
+            font-size: 27.5px;
+            margin-bottom: 0px;
+        }
 
 
         footer {
@@ -191,8 +198,13 @@
             padding: 15px;
             box-sizing: border-box;
         }
+        #frame-wrapper {
+            display: flex;
+        }
         footer a, footer p  {
             color: white;
+            width: calc(100% / 3);
+            text-align: center;
         }   
         footer a:hover {
             cursor: pointer;
@@ -201,6 +213,8 @@
         }
         footer p {
             margin: 0;
+            width: 100%;
+            margin-top: 20px;
             text-align: center;
         }   
     </style>
@@ -215,7 +229,7 @@
         </button>
 
         <div id="header-main-frame">
-            <h1>Human Development Reports</h1>
+            <h2 id="header-title">Human Development Reports</h2>
 
             <div id="dot-frame"> </div>
         </div>
@@ -229,10 +243,18 @@
 
     <main>
         <article class="section-frame-welcome">
-            <section class="section-text animation-frame active">
-                <h2 style="font-size: 60px; text-align: center">Welcome</h2>
-                <p id="text-try">With this project we want to show how to the human wealth changed among the years.</p>
-                <p>To do so we used different data and visualization.</p>
+            <section class="section-text">
+                <h1 style="font-size: 37.5px; text-align: center">Health Development Reports</h1>
+            </section>
+
+            <section class="section-text">
+                <h2 style="font-size: 55px; text-align: center">Welcome</h2>
+                <p>Welcome to our data visualization website, showcasing the progress and developments in health over the years across countries.</p>
+                <p>You will find interactive graphs and charts that illustrate the changes and trends in various indicators such as Human Development Index (HDI), Material Foot Print(MFT) and and much more information. Explore how various factors such as advances in medicine, pollution, and salary have affected global human development. Get a comprehensive understanding of the challenges and achievements and how they have impacted people's lives.</p>
+                <p>The target of this website is to inform everyone about the changes appens to the world wealth in the last 30 years. This could be helpful to the companies for instance to understand how the world is changing forecasting the feature cost of moving to a specific country.</p>
+            </section>
+
+            <section class="section-text">
                 <input type="button" id="start" onclick="start()" value="Let's Start">
             </section>
         </article> 
@@ -244,7 +266,7 @@
             </section>
 
             <section class="section-text">
-                <h2>Health Development Index (HDI)</h2>
+                <h2>Human Development Index (HDI)</h2>
 
                 <p>Through a Choropleth map we create a render of the various HDI per country, the 
                              color palette rappresent the classification of the nation. Unfortunately the map 
@@ -261,7 +283,7 @@
         
         <article class="section-frame animation-frame active" style="display: none;">
             <section>
-                <iframe src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
+                <iframe id="mf-plot" src="./html/chart/map_box_mf.html" frameborder="0"></iframe>
             </section>
 
             <section class="section-text">
@@ -274,8 +296,7 @@
 
         <article class="section-frame animation-frame active" style="display: none;">
             <section class="section-text">
-                <p>In the following dorpdown menu we can select different variables for different parts of the world
-                    (In some cases continents in in oder big portion of them, e.g. Arab States)</p>
+                <p>In the following dorpdown menu is possible to select different variables and return the data divided by the main region of the world.</p>
                 <select name="" class="dropdown-menu" id="category">
                     <option value="" selected disabled hidden>Select Category</option>
                     <option value="abr">Adolescent Birth Rate</option>
@@ -284,16 +305,6 @@
                     <option value="le">Life Expectancy at Birth</option>
                     <option value="co2">Carbon Dioxide Emission Per Capita</option>
                     <option value="mf">Material Footprint Per Capita</option>
-                </select>
-
-                <select name="" class="dropdown-menu" id="region">
-                    <option value="" selected disabled hidden>Select Region</option>
-                    <option value="arab_states">Arab States</option>
-                    <option value="east_asia_and_the_pacific">East Asia and the Pacific</option>
-                    <option value="latin_america_and_the_caribbean">Latin America and the Caribbean</option>
-                    <option value="south_asia">South Asia</option>
-                    <option value="sub_saharan_africa">Sub-Saharan Africa</option>
-                    <option value="world">World</option>
                 </select>
 
                 <input id="search-chart" type="button" onclick="show_chart()" value="Send">
@@ -305,7 +316,6 @@
 
             <section class="section-text">
                 <h2 id="line-chart-title" class="main-title"></h2>
-                <h4 id="line-chart-region" class="sub-title"></h4>
 
                 <p></p>
             </section>
@@ -313,9 +323,19 @@
     </main>
 
     <footer>
-        <a href="https://hdr.undp.org/data-center/documentation-and-downloads" target="_blank">
-            Dataset's Link
-        </a>
+        <div id="frame-wrapper">
+            <a href="https://hdr.undp.org/data-center/documentation-and-downloads" target="_blank">
+                Sources
+            </a>
+
+            <a href="./docs/report.pdf">
+                Report
+            </a>
+
+            <a onclick="window.location.reload()"> 
+                Home
+            </a>
+        </div>
 
         <p>Gabriele Passoni, Pietro Puiatti, Matteo Vairani</p>
     </footer>
